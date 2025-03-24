@@ -1,0 +1,124 @@
+/* Reset CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333; /* Black */
+}
+
+/* Form Container Styles */
+.employee-id,
+.opinions,
+.ideas,
+.satisfaction,
+.anonymous-feedback {
+    margin-bottom: 20px;
+    background-color: #4e8fb4; /* White */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.employee-id {
+    width: 150px; /* Adjusted width */
+    margin-bottom: 10px;
+    background-color: #fdfdfd; /* Blue */
+    color: #fff;
+    padding: 10px;
+}
+
+.employee-id input[type="text"] {
+    width: calc(100% - 20px); /* Adjusted width for input */
+    padding: 5px;
+    border-radius: 4px;
+    border: none;
+    background-color: transparent;
+    color: #000; /* Black text color */
+    margin-top: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.employee-id input[type="text"]:focus {
+    background-color: rgba(255, 255, 255, 0.3); /* Light blue on focus */
+}
+
+/* Input and Textarea Styles */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333; /* Black */
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #040404;
+    margin-bottom: 10px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #007bff; /* Blue */
+}
+
+/* Satisfaction Rating Slider Styles */
+input[type="range"] {
+    width: 50%; /* Adjusted width */
+    margin-bottom: 10px;
+}
+
+/* Button Styles */
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff; /* Blue */
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker Blue */
+}
+
+/* Checkbox Styles */
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.employee-id,
+.opinions,
+.ideas,
+.satisfaction,
+.anonymous-feedback {
+    animation: fadeIn 0.5s ease;
+}

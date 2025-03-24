@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Tasks</title>
+    <link rel="stylesheet" href="task.css">
+    <style>
+        /* Reset CSS */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Body Styles */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+    
+    /* Container Styles */
+    .task-list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .task {
+        background-color: #1e2a4a; /* Dark Blue */
+        color: #fff; /* White text */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+    
+    .task:hover {
+        transform: translateY(-5px);
+    }
+    
+    /* Button Styles */
+    button {
+        padding: 8px 16px;
+        border: none;
+        background-color: #007bff; /* Blue */
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    button:hover {
+        background-color: #0056b3; /* Darker Blue */
+    }
+    
+    /* Dropdown Styles */
+    select {
+        padding: 6px 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    /* Animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .task {
+        animation: fadeIn 0.5s ease;
+    }
+    </style>
+</head>
+<body>
+
+<h2>Assigned Tasks</h2>
+
+<div class="task-list">
+    <div class="task">
+        <h3>Task 1</h3>
+        <p>Description: task name.</p>
+        <p>Duration: 2 hours</p>
+        <label for="task1-status">Status:</label>
+        <select id="task1-status" class="task-status">
+            <option value="not-started">Not Started</option>
+            <option value="in-progress">In Progress</option>
+            <option value="completed">Completed</option>
+        </select>
+        <label for="task1-assignee">Assignee:</label>
+        <select id="task1-assignee" class="task-assignee">
+            <option value="individual">Individual</option>
+            <option value="team">Team</option>
+        </select>
+        <p>Priority: High</p>
+        <p>Deadline: 2024-02-10</p>
+        <button class="complete-task-btn">Complete Task</button>
+        <button class="explain-problem-btn">Explain Problem</button>
+    </div>
+    <div class="task">
+        <h3>Task 2</h3>
+        <p>Description: task name</p>
+        <p>Duration: 3 hours</p>
+        <label for="task2-status">Status:</label>
+        <select id="task2-status" class="task-status">
+            <option value="not-started">Not Started</option>
+            <option value="in-progress">In Progress</option>
+            <option value="completed">Completed</option>
+        </select>
+        <label for="task2-assignee">Assignee:</label>
+        <select id="task2-assignee" class="task-assignee">
+            <option value="individual">Individual</option>
+            <option value="team">Team</option>
+        </select>
+        <p>Priority: Medium</p>
+        <p>Deadline: 2024-02-12</p>
+        <button class="start-task-btn">Start Task</button>
+        <button class="explain-problem-btn">Explain Problem</button>
+    </div>
+    <!-- Add more tasks as needed -->
+</div>
+
+</body>
+</html>

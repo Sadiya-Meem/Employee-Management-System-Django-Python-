@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Set password page</title>
+    <link rel="stylesheet" href="newsetpass.css">
+</head>
+<body>
+<section>
+      
+  <div class="box">
+    
+    <div class="square" style="--i:0;"></div>
+    <div class="square" style="--i:1;"></div>
+    <div class="square" style="--i:2;"></div>
+    <div class="square" style="--i:3;"></div>
+    <div class="square" style="--i:4;"></div>
+    <div class="square" style="--i:5;"></div>
+    
+   <div class="container"> 
+    <div class="form"> 
+      <h2>Reset Password</h2>
+      <h2></h2>
+      <form method="GET" action="login.html">
+  
+          <div  button class="inputBx">
+            <input type="text" id="verification code"  required="required" >
+            <span>Enter the verification code </span>
+        </button>
+         <!--<input type="text" required="required">-->
+          <!--<span>Code</span>-->
+          
+         <i class="fas fa-user-circle"></i>
+        </div>
+        <div class="inputBx password">
+          <input id=" set password-input" type="password" name="password" required="required">
+          <span>Set Password</span>
+          <a href="#" class="password-control" onclick="return show_hide_password(this);"></a>
+        </div>
+        <div class="inputBx password">
+          <input id=" Verify password-input" type="password" name="password" required="required">
+          <span>Verify Password</span>
+          <a href="#" class="password-control" onclick="return show_hide_password(this);"></a>
+        </div>
+          <br>
+        <div class="inputBx">
+          <br>
+          <input type="submit" value="Continue"><a href="login.html"></a> 
+        </div>
+      </form>
+    </div>
+  </div>
+    
+  </div>
+</section>
+<script>
+</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #000; /* Black text */
+    background-color: #4785b7; /* Light blue background */
+}
+
+h2 {
+    color: #000; /* Black text */
+}
+
+.employee-id label {
+    color: #000; /* Black text */
+}
+
+.employee-id input[type="text"] {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #000; /* Black border */
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.document-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.document-list li {
+    background-color: #a9c7cd; /* White background */
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    display: inline-block; /* Display as inline block */
+    width: calc(50% - 10px); /* Set width to half of the container width with a margin */
+    margin-right: 20px; /* Margin between list items */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.document-list li:nth-child(even) {
+    background-color: #4799a7ea; /* Light gray background for even list items */
+}
+
+.document-list li:hover {
+    background-color: #e0e0e0; /* Lighter gray background on hover */
+}
+
+.document-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.document-icon img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.document-details h3 {
+    color: #000; /* Black text */
+}
+
+.document-options {
+    display: flex;
+    align-items: center;
+}
+
+.document-options a, .document-options button {
+    margin-right: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.document-options a:hover, .document-options button:hover {
+    filter: brightness(90%); /* Slightly reduce brightness on hover */
+}
+
+.document-link {
+    background-color: #3498db; /* Blue background */
+    color: #fff; /* White text */
+}
+
+.document-download {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+}
+
+.document-share {
+    background-color: #808080; /* Gray background */
+    color: #f4f1f1; /* White text */
+}
+
+.add-document button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ae34db; /* Blue background */
+    color: #fff; /* White text */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.add-document button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}

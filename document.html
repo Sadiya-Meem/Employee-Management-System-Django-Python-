@@ -1,0 +1,166 @@
+<!-- myapp/templates/document.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Important Stored Documents</title>
+    <link rel="stylesheet" href="/static/css/document.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #000; /* Black text */
+            background-color: #7faad1; /* Light blue background */
+            text-align: center; /* Center align text */
+        }
+        
+        h2 {
+            color: #000; /* Black text */
+            margin-top: 20px; /* Add some space above the heading */
+        }
+        .employee-id label {
+            color: #000; /* Black text */
+        }
+        
+        .employee-id input[type="text"] {
+            width: 200px;
+            padding: 8px;
+            border: 1px solid #000; /* Black border */
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        
+        .document-list {
+            list-style-type: none;
+            padding: 0;
+            text-align: left; /* Align list items to the left */
+        }
+        .document-list li {
+            background-color: #eaf4f6; /* White background */
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 15px;
+            display: inline-block; /* Display as inline block */
+            width: calc(50% - 10px); /* Set width to half of the container width with a margin */
+            margin-right: 20px; /* Margin between list items */
+            transition: background-color 0.3s ease; /* Smooth background color transition */
+        }
+        
+        .document-list li:nth-child(even) {
+            background-color:  #1e678e7c; /* Light gray background for even list items */
+        }
+        
+        .document-list li:hover {
+            background-color:  #548cba; /* Lighter gray background on hover */
+        }
+        
+        .document-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .document-icon img {
+            width: 40px;
+            margin-right: 10px;
+        }
+        
+        .document-details h3 {
+            color: #000; /* Black text */
+        }
+        
+        .document-options {
+            display: flex;
+            align-items: center;
+        }
+        
+        .document-options a, .document-options button {
+            margin-right: 10px;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+        
+        .document-options a:hover, .document-options button:hover {
+            filter: brightness(90%); /* Slightly reduce brightness on hover */
+        }
+        
+        .document-link {
+            background-color: #04080b; /* Blue background */
+            color: #faf7f7; /* White text */
+        }
+        
+        .document-download {
+            background-color: #070b10; /* Black background */
+            color: #fdf8f8; /* White text */
+        }
+        
+        .document-share {
+            background-color: #0c1115; /* Gray background */
+            color: #f4f1f1; /* White text */
+        }
+        .add-document-container {
+            margin-top: 20px; /* Add space above the boxed area */
+            text-align: center; /* Center align boxed area */
+        }
+        
+        .add-document {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #fff; /* White background for the box */
+            border: 1px solid #0f0c0c; /* Light gray border */
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(21, 4, 4, 0.968); /* Box shadow */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+            margin: 0 auto; /* Center the box horizontally */
+        }
+        
+        .add-document:hover {
+            background-color: #f3f6fa; /* Light gray background on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced box shadow on hover */
+        }
+        
+        .add-document-btn {
+            text-decoration: none; /* Remove underline from link */
+            color: #040d13; /* Blue text color */
+            font-weight: bold; /* Bold text */
+            transition: color 0.3s ease; /* Smooth color transition */
+        }
+        
+        .add-document-btn:hover {
+            color: #2980b9; /* Darker blue text on hover */
+        }
+    
+    </style>
+</head>
+<body>
+<h2>Important Stored Documents</h2>
+<ul class="document-list">
+    {% for document in documents %}
+    <li>
+        <div class="document-info">
+            <div class="document-icon">
+                <i class="fas fa-file"></i>
+            </div>
+            <div class="document-details">
+                <h3>{{ document.title }}</h3>
+                <p>{{ document.description }}</p>
+            </div>
+        </div>
+        <div class="document-options">
+            <a href="{{ document.file.url }}" class="document-link">View Document</a>
+            <a href="{{ document.file.url }}" download class="document-download">Download</a>
+            <button class="document-share">Share</button>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+<div class="add-document">
+    <a href="{% url 'upload_document' %}" id="add-document-btn">Add Document</a>
+</div>
+</body>
+</html>

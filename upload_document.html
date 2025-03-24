@@ -1,0 +1,79 @@
+<!-- myapp/templates/upload_document.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Document</title>
+    <link rel="stylesheet" href="/static/css/document.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #000; /* Black text */
+            background-color: #7faad1; /* Light blue background */
+            text-align: center; /* Center align text */
+        }
+        
+        h2 {
+            color: #000; /* Black text */
+            margin-top: 20px; /* Add some space above the heading */
+        }
+        
+        form {
+            background-color: #fff; /* White background */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.874); /* Initial box shadow */
+            width: 60%; /* Set form width */
+            margin: 20px auto; /* Center the form horizontally */
+            padding: 20px; /* Add padding inside the form */
+            transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for box shadow and transform */
+        }
+        
+        form:hover {
+            box-shadow: 0 8px 16px #0555a0; /* Box shadow on hover */
+            transform: translateY(-5px); /* Move form up slightly on hover */
+        }
+        
+        form label {
+            display: block; /* Display labels as blocks */
+            margin-bottom: 8px; /* Add space below labels */
+            color: #000; /* Black text */
+        }
+        
+        form input[type="text"],
+        form input[type="file"],
+        form textarea {
+            width: calc(100% - 20px); /* Full width minus padding */
+            padding: 8px; /* Add padding */
+            margin-bottom: 15px; /* Add space below inputs */
+            border: 1px solid #0b0606; /* Light gray border */
+            border-radius: 4px; /* Rounded corners */
+        }
+        
+        form button[type="submit"] {
+            background-color: #7faad1; /* Blue background */
+            color: #fff; /* White text */
+            border: none; /* Remove border */
+            padding: 10px 20px; /* Padding inside button */
+            border-radius: 4px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor */
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+        
+        form button[type="submit"]:hover {
+            background-color: #0e0f0f; /* Darker blue background on hover */
+        }
+        
+        
+    </style>
+</head>
+<body>
+<h2>Upload Document</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload</button>
+</form>
+</body>
+</html>

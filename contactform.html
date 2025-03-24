@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="/static/css/coantactform.css">
+
+<style>
+/* Base styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #bed0e3; /* Light blue background */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  height: 100vh; /* Make sure the body covers the entire viewport height */
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #7faad1;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgb(4, 8, 26); /* Light blue shadow */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add transition for hover effect */
+}
+
+.container:hover {
+  box-shadow: 0 0 15px #7faad1; /* Darker shadow on hover */
+  transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+h2 {
+  text-align: center;
+  color: #080909; /* Darker blue color */
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  color: #0e0e0f; /* Darker blue color */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: calc(100% - 22px); /* Adjusted width to account for padding and border */
+  padding: 10px;
+  border: 1px solid #0a0505;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover {
+  border-color: #02060a; /* Darker blue color on hover */
+}
+
+button[type="submit"] {
+  background-color: #white; /* Darker blue button color */
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button[type="submit"]:hover {
+  background-color: #0b0c0d; 
+  color: white;/* Even darker blue on hover */
+}
+
+button[type="submit"]:hover::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.6s ease;
+  border-radius: 50%;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+}
+
+button[type="submit"]:hover::after {
+  content: 'Send';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  font-weight: bold;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+button[type="submit"]:hover::before,
+button[type="submit"]:hover::after {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <form method="post" action="{% url 'saveenquiry' %}">
+      {% csrf_token %}
+    <h2>Contact Me</h2>
+    <form action="submit_form.php" method="POST">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Leave Application</title>
+    <link rel="stylesheet" href="leave.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #7faad1; /* Set background color */
+            background-size: cover; /* Cover the entire background */
+            background-repeat: no-repeat; /* Do not repeat the background image */
+            background-position: center; 
+        }
+        
+        .leave-form {
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(24, 17, 8, 0.578);
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .leave-form:hover {
+            box-shadow: 0px 0px 15px 0px rgb(6, 1, 1); /* Change hover box-shadow color to grey */
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: rgb(8, 2, 2); /* Change text color to white */
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            padding: 10px; /* Add padding */
+            border-radius: 5px; /* Add border-radius */
+            transition: box-shadow 0.3s ease; /* Add transition */
+        }
+        
+        .form-group:hover {
+            border-color: rgb(13, 1, 1); /* Change border color to grey on hover */
+            box-shadow: 0px 0px 5px 0px rgb(10, 2, 2); /* Change box-shadow color to grey on hover */
+        }
+        
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #0b0101;
+        }
+        
+        input[type="text"],
+        input[type="date"],
+        select,
+        textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #140707;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+            background-color: #7faad1; /* Change background color to white */
+            color: black; /* Change text color to black */
+        }
+        
+        textarea {
+            height: 150px;
+        }
+        
+        textarea:hover {
+            border-color:#ffffff ;/* Change border color to grey on hover */
+            box-shadow: 0px 0px 5px 0px rgb(10, 5, 5); /* Change box-shadow color to grey on hover */
+        }
+        
+        input[type="submit"] {
+            background-color: #7faad1; /* Change submit button background color to grey */
+            color: rgb(9, 3, 3); /* Change submit button text color to white */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #d9dfea; /* Change hover background color to dark grey */
+            color: black; /* Change hover text color to black */
+        }
+        
+    </style>
+</head>
+<body>
+
+<form class="leave-form">
+    <h2>Leave Application</h2>
+    <div class="form-group">
+        <label for="employee_name">Employee Name:</label>
+        <input type="text" id="employee_name" name="employee_name" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="employee_id">Employee ID:</label>
+        <input type="text" id="employee_id" name="employee_id" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="leave_type">Leave Type:</label>
+        <select id="leave_type" name="leave_type" required>
+            <option value="Sick Leave">Sick Leave</option>
+            <option value="Vacation Leave">Vacation Leave</option>
+            <option value="Personal Leave">Personal Leave</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date" name="start_date" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="end_date">End Date:</label>
+        <input type="date" id="end_date" name="end_date" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="reason">Reason for Leave:</label>
+        <textarea id="reason" name="reason" required></textarea>
+    </div>
+    
+    <div class="form-group">
+        <input type="submit" value="Submit Application">
+    </div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Management </title>
+  <link rel="stylesheet" href="/static/css/dashboard.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700");
+  
+    * {
+      margin: 0;
+      padding: 0;
+      outline: none;
+      border: none;
+      text-decoration: none;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    
+    body {
+      background: #dfe9f5;
+    }
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    nav {
+      position: fixed;
+      top: 0;
+      height: 100%;
+      left: 0;
+      background: #7faad1;
+      width: 280px;
+      overflow: hidden;
+      box-shadow: 0 20px 35px rgba(2, 4, 19, 0.269);
+    }
+    
+    .logo {
+      text-align: center;
+      display: flex;
+      margin: 10px 0 0 10px;
+    }
+    
+    .logo img {
+      width: 45px;
+      height: 45px;
+      border-radius: 5%;
+    }
+    
+    .logo span {
+      font-weight: bold;
+      padding-left: 10px;
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+    
+    a {
+      position: relative;
+      color: rgb(255, 254, 254);
+      font-size: 14px;
+      display: table;
+      width: 280px;
+      padding: 10px;
+    }
+    
+    nav .fas {
+      position: relative;
+      width: 70px;
+      height: 40px;
+      top: 14px;
+      font-size: 20px;
+      text-align: center;
+    }
+    
+    .nav-item {
+      position: relative;
+      top: 12px;
+      margin-left: 10px;
+    }
+    
+    a:hover {
+      background: #7faad1;
+    }
+    
+    .logout {
+      position: absolute;
+      bottom: 0;
+    }
+    
+    /* Main Section */
+    .main {
+      padding: 20px;
+      width: 100%;
+      margin-left: 280px;
+    }
+    
+    .main-top {
+      display: flex;
+      width: 100%;
+    }
+    
+    .main-top i {
+      position: absolute;
+      right: 0;
+      margin: 10px 30px;
+      color: rgba(1, 3, 11, 0.984);
+      cursor: pointer;
+    }
+    
+    .main-skills {
+      display: flex;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .main-skills .card {
+      width: 25%;
+      margin: 10px;
+      background: #7faad1;
+      text-align: center;
+      border-radius: 20px;
+      padding: 10px;
+      box-shadow: 0 20px 35px rgba(3, 1, 1, 0.292);
+    }
+    
+    .main-skills .card h3 {
+      margin: 10px;
+      text-transform: capitalize;
+      
+    }
+    
+    .main-skills .card p {
+      font-size: 12px;
+    }
+    
+    .main-skills .card button {
+      background: rgb(0, 0, 3);
+      color: #fff;
+      padding: 7px 15px;
+      border-radius: 10px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+    
+    .main-skills .card button:hover {
+      background: rgba(255, 255, 255, 0.856);
+    }
+    
+    .main-skills .card i {
+      font-size: 20px;
+      padding: 10px;
+      text-decoration-color: #0a0303;
+    }
+    
+    /* Courses */
+    .main-course {
+      margin-top: 20px;
+      text-transform: capitalize;
+    }
+    
+    .course-box {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 20px 35px rgba(2, 2, 8, 0.176);
+    }
+    
+    .course-box ul {
+      list-style: none;
+      display: flex;
+      overflow-x: auto;
+    }
+    
+    .course-box ul li {
+      margin: 10px;
+      color: rgb(100, 140, 193);
+      cursor: pointer;
+    }
+    
+    .course-box ul .active {
+      color: #040406;
+      border-bottom: 1px solid #f4ecec;
+    }
+    
+    .course-box .course {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    .box {
+      width: calc(33.33% - 20px);
+      padding: 10px;
+      margin: 10px;
+      border-radius: 10px;
+      background: rgb(235, 233, 233);
+      box-shadow: 0 20px 35px rgba(50, 48, 65, 0.05);
+    }
+    
+    .box p {
+      font-size: 12px;
+      margin-top: 5px;
+    }
+    
+    .box button {
+      background: #7faad1;
+      color: #000000;
+      padding: 7px 10px;
+      border-radius: 10px;
+      margin-top: 3rem;
+      cursor: pointer;
+    }
+    
+    .box button:hover {
+      background: rgba(2, 1, 10, 0.982);
+    }
+    
+    .box i {
+      font-size: 7rem;
+      float: right;
+      margin: -20px 20px 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="#" class="logo">
+          {% comment %} <img src="dashlogo.png" alt=""> {% endcomment %}
+          <span class="nav-item">Employee Dashboard</span>
+        </a></li>
+        <li><a href="holidays.css">
+          <i class="fas fa-users"></i>
+          <span class="nav-item">Holidays</span>
+        </a></li>
+        <li><a href="#">
+          <i class="fas fa-user-plus"></i>
+          <span class="nav-item">Update information</span>
+        </a></li>
+        <li><a href="#">
+          <i class="fas fa-chart-bar"></i>
+          <span class="nav-item">Analytics</span>
+        </a></li>
+        <li><a href="#">
+          <i class="fas fa-tasks"></i>
+          <span class="nav-item">Tasks</span>
+        </a></li>
+        <!-- Replace Settings with Personal Info -->
+        <li><a href="#">
+          <i class="fas fa-user"></i>
+          <span class="nav-item">Personal Info</span>
+        </a></li>
+        <li><a href="#">
+          <i class="fas fa-question-circle"></i>
+          <span class="nav-item">Help</span>
+        </a></li>
+        <li><a href="index.html" class="logout">
+          <i class="fas fa-sign-out-alt"></i>
+          <span class="nav-item">Log out</span>
+        </a></li>
+      </ul>
+    </nav>
+
+    <section class="main">
+      <div class="main-top">
+        <h1>Employee Management</h1>
+        <i class="fas fa-user-cog"></i>
+      </div>
+      <div class="main-skills">
+        <div class="card">
+          <i class="fas fa-user-friends"></i>
+          <h3>Holidays</h3>
+          <p>Company holidays.</p>
+          <button><a href="{% url 'holidays' %}">View Details</a></button>
+        </div>
+        <div class="card">
+          <i class="fas fa-info-circle"></i>
+          <h3>Personal Info</h3>
+          <p>View and manage personal information.</p>
+          <button><a href="{% url 'regis' %}">View Details</a></button>
+        </div>
+        <div class="card">
+          <i class="fas fa-book"></i>
+          <h3>Attendance</h3>
+          <p>Track employees working days.</p>
+          <button><a href="{% url 'attendance' %}">View Details</a></button>
+        </div>
+        <div class="card">
+          <i class="fas fa-sign-out-alt"></i>
+          <h3>Leave</h3>
+          <p>Leave applications.</fas-></p>
+          <button><a href="{% url 'leave' %}">View Details</a></button>
+        </div>
+        <div class="card">
+          <i class="fas fa-credit-card"></i>
+          <h3>Salary</h3>
+          <p>Payment section.</p>
+        <!-- dashboard.html -->
+            <button><a href="{% url 'salary' %}">View Details</a></button>
+
+        </div>
+        <div class="card">
+          <i class="fas fa-newspaper"></i>
+          <h3>Document</h3>
+          <p>Access important document.</p>
+          <button><a href="{% url 'document' %}">View Details</a></button>
+        </div>
+        <div class="card">
+          <i class="fas fa-tasks"></i>
+          <h3>Tasks</h3>
+          <p>Assign tasks.</p>
+          <button><a href="#">View Details</a></button>
+        </div>
+        <div class="card">
+          <i class="fas fa-chart-line"></i>
+          <h3>Analytics</h3>
+          <p>Give personal opinion.</p>
+          <button><a href="{% url 'analytics' %}">View Details</a></button>
+        </div>
+        
+        <!-- Replace Settings box with Personal Info box -->
+        
+      </div>
+      <section class="main-course">
+        <h1>Employee Tasks</h1>
+        <div class="course-box">
+          <ul>
+            <li class="active">In progress</li>
+            <li>Completed</li>
+            <li>Assigned</li>
+            <li>Pending</li>
+          </ul>
+          <div class="course">
+            <div class="box">
+              <h3>Task 1</h3>
+              <p>Assigned to John Doe</p>
+              <button>View Task</button>
+              <i class="fas fa-tasks"></i>

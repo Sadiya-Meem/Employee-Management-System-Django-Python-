@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #3498db; /* Blue background color */
+}
+
+header {
+    background-color: #423475;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px; /* Increased padding for content separation */
+    background-color: #fff; /* White background for content area */
+    border-radius: 10px; /* Rounded corners for content area */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for content area */
+}
+
+p {
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 20px;
+}
+
+#our-values,
+#why-choose-us,
+#our-team,
+#contact-us {
+    background-color: #f2f2f2; /* Light gray background color for section boxes */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#our-values ul,
+#why-choose-us ul {
+    margin-left: 20px;
+}
+
+#our-values ul li,
+#why-choose-us ul li {
+    margin-bottom: 10px;
+}

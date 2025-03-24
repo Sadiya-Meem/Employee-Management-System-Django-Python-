@@ -1,0 +1,71 @@
+/* Reset CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+/* Container Styles */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.task {
+    background-color: #1e2a4a; /* Dark Blue */
+    color: #fff; /* White text */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.task:hover {
+    transform: translateY(-5px);
+}
+
+/* Button Styles */
+button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff; /* Blue */
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker Blue */
+}
+
+/* Dropdown Styles */
+select {
+    padding: 6px 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.task {
+    animation: fadeIn 0.5s ease;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Attendance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #7faad1;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        form {
+            background-color: #ebeff3;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.792);
+            padding: 30px;
+            border-radius: 8px;
+            width: 400px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #111112;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #0a0a0a;
+            font-size: 14px;
+            text-align: left;
+        }
+        
+        input, select, textarea {
+            width: calc(100% - 16px);
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #020000;
+            border-radius: 4px;
+        }
+        
+        .attendance-status {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        
+        .status-icon {
+            font-size: 24px;
+            margin-right: 8px;
+        }
+        
+        button {
+            background-color: #020307;
+            color: rgb(255, 255, 255);
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #7faad1;
+            color: rgb(5, 4, 4);
+        }
+    </style>
+</head>
+<body>
+
+    <form action="{% url 'attendance' %}" method="post">
+        {% csrf_token %}
+        <h2>Employee Attendance</h2>
+
+        <label for="user">Employee Name:</label>
+        {{ form.user }}
+
+        <label for="date">Date:</label>
+        {{ form.date }}
+
+        <label for="status">Attendance Status:</label>
+        {{ form.status }}
+
+        <label for="comments">Comments:</label>
+        {{ form.comments }}
+
+        <button type="submit">Submit Attendance</button>
+    </form>
+
+</body>
+</html>

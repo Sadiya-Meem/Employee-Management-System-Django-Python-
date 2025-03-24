@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    
+      body {
+        background-color: #eff2f5; /* Maximum blue background */
+        background-size: 150%;
+        background-position: -350px 0px;
+      }
+    
+      div.main {
+        width: 900px;
+        margin: 50px auto 0px auto;
+      }
+    
+      h2 {
+        text-align: center;
+        padding: 25px;
+        font-family: Arial;
+        color: #080202;
+        text-shadow: 1px 1px 17px #7faad1;
+      }
+    
+      div.register {
+        background-color: rgba(28, 20, 22, 0.7); /* Darkish blue background */
+        width: 90%;
+        font-size: 18px; /* Increased font size for better readability */
+        border-radius: 18px;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        box-shadow: 2px 2px 15px rgba(250, 247, 247, 0.952);
+        color: #090808;
+        padding: 70px; /* Increased padding for better spacing */
+      }
+    
+      .form-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 60px; /* Increased margin for better spacing */
+      }
+    
+      .form-row label {
+        flex-basis: 50%;
+        text-align: right;
+        margin-right: 40px;
+        color: #ffffff;
+        font-size: 30px; /* Increased font size for labels */
+      }
+    
+      .form-row input[type="text"],
+      .form-row input[type="number"],
+      .form-row input[type="email"],
+      .form-row input[type="date"],
+      .form-row input[type="radio"] {
+        flex: 3; /* Expand input boxes to fill available space */
+        padding: 50px; /* Increased padding for larger input boxes */
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+        border: none;
+        background-color: #7faad1;/* Darker blue input boxes */
+        color: #ffffff;
+        margin: 0 5px;
+        outline: none;
+        font-size: 18px; /* Matched font size with form for consistency */
+      }
+    
+      .form-row input[type="submit"] {
+        flex-basis: calc(50% - 10px); /* Adjusted width of submit button */
+        margin-left: 40%; /* Centered submit button */
+        padding: 15px; /* Reduced padding for submit button */
+        background-color: #7faad1;/* Blue submit button */
+        color: #0c0b0b;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: 15px; /* Matched font size with form for consistency */
+      }
+    
+      .form-row input[type="submit"]:hover {
+        background-color:rgb(5, 5, 5);
+        color:white; /* Darker blue on hover */
+      }
+    
+      /* Maximum blue and minimum white theme adjustments */
+      body {
+        background-color: #f8fafc;/* Maximum blue background */
+      }
+    
+      h2 {
+        color: #0c0909; /* White text color */
+        text-shadow: 1px 1px 17px rgba(112, 171, 209, 0.927); /* Text shadow for readability */
+      }
+    
+      div.register {
+        background-color: #7faad1; /* Darkish blue background */
+        color: #ffffff; /* White text color */
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.877); /* Adjusted shadow for contrast */
+      }
+    
+      .form-row label {
+        color: #ffffff; /* White label text color */
+      }
+    
+      .form-row input[type="text"],
+      .form-row input[type="number"],
+      .form-row input[type="email"],
+      .form-row input[type="date"],
+      .form-row input[type="radio"] {
+        background-color: #7faad1; /* Darker blue input boxes */
+        color: #ffffff; /* White text color */
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.838); /* Adjusted shadow for contrast */
+      }
+    
+      .form-row input[type="submit"] {
+        background-color: black; /* Blue submit button */
+        color: #ffffff; /* White text color */
+      }
+      .form-row input[type="submit"]:hover {
+        background-color: #02070d; /* Darker blue on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h2>Register Here</h2>
+      <div class="register">
+        <form method="post" action="{% url 'register' %}">
+          {% csrf_token %} {{ form.as_p }}
+          <div class="form-row">
+            <input type="submit" value="Submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #afd8eb; /* White background */
+            font-family: Arial, sans-serif;
+            color: #333333; /* Dark gray text color */
+        }
+        
+        .main {
+            width: 90%;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            background-color: #7faad1; /* Lighter blue background */
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        
+        .main:hover {
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+            transform: translateY(-5px);
+        }
+        
+        h2 {
+            text-align: center;
+            padding: 15px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+            color: #ffffff; /* White text color */
+        }
+        
+        .profile {
+            padding: 30px;
+            background-color: #7faad1; /* Lighter blue background */
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        
+        .profile:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            transform: translateY(-5px);
+        }
+        
+        .profile p {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #ffffff; /* White text color */
+        }
+        
+    </style>
+<body>
+    <div class="main">
+        <h2>Personal Profile</h2>
+        <div class="profile">
+            <p><strong>Name:</strong> {{ name }}</p>
+            <p><strong>Father's Name:</strong> {{ father_name }}</p>
+            <p><strong>Mother's Name:</strong> {{ mother_name }}</p>
+            <p><strong>Address:</strong> {{ address }}</p>
+            <p><strong>Phone Number:</strong> {{ phone }}</p>
+            <p><strong>Email:</strong> {{ email }}</p>
+            <p><strong>Joining Date:</strong> {{ joining_date }}</p>
+        </div>
+    </div>
+</body>
+</html>

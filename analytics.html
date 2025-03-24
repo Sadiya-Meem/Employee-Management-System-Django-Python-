@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Analytics</title>
+    <link rel="stylesheet" href="/static/css/analytics.css">
+    <style>
+        /* Reset CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333; /* Black */
+}
+
+/* Form Container Styles */
+.employee-id,
+.opinions,
+.ideas,
+.satisfaction,
+.anonymous-feedback {
+    margin-bottom: 20px;
+    background-color: #4e8fb4; /* White */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.employee-id {
+    width: 150px; /* Adjusted width */
+    margin-bottom: 10px;
+    background-color: #fdfdfd; /* Blue */
+    color: #fff;
+    padding: 10px;
+}
+
+.employee-id input[type="text"] {
+    width: calc(100% - 20px); /* Adjusted width for input */
+    padding: 5px;
+    border-radius: 4px;
+    border: none;
+    background-color: transparent;
+    color: #000; /* Black text color */
+    margin-top: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.employee-id input[type="text"]:focus {
+    background-color: rgba(255, 255, 255, 0.3); /* Light blue on focus */
+}
+
+/* Input and Textarea Styles */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333; /* Black */
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #040404;
+    margin-bottom: 10px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #007bff; /* Blue */
+}
+
+/* Satisfaction Rating Slider Styles */
+input[type="range"] {
+    width: 50%; /* Adjusted width */
+    margin-bottom: 10px;
+}
+
+/* Button Styles */
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff; /* Blue */
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker Blue */
+}
+
+/* Checkbox Styles */
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.employee-id,
+.opinions,
+.ideas,
+.satisfaction,
+.anonymous-feedback {
+    animation: fadeIn 0.5s ease;
+}
+    </style>
+</head>
+<body>
+
+<h2>Employee Analytics</h2>
+
+<form method="POST" action="{% url 'analytics' %}">
+    {% csrf_token %}
+
+    <div class="employee-id">
+        <label for="employee-id-input">Employee ID:</label>
+        <input type="text" id="employee-id-input" name="employee_id" placeholder="Enter your employee ID...">
+    </div>
+
+    <div class="opinions">
+        <h3>Opinions about Company Benefits</h3>
+        <textarea id="company-benefits-opinion" name="company_benefits_opinion" rows="4" cols="50" placeholder="Share your opinions about company benefits..."></textarea>
+    </div>
+
+    <div class="ideas">
+        <h3>Ideas for Improving Company Circumstances</h3>
+        <textarea id="improvement-ideas" name="improvement_ideas" rows="4" cols="50" placeholder="Share your ideas for improving company circumstances..."></textarea>
+    </div>
+
+    <div class="satisfaction">
+        <h3>Overall Satisfaction Rating</h3>
+        <input type="range" id="satisfaction-rating" name="satisfaction_rating" min="1" max="10" value="5" step="1">
+        <p>Rating: <span id="satisfaction-value">5</span></p>
+    </div>
+
+    <div class="anonymous-feedback">
+        <input type="checkbox" id="anonymous-checkbox" name="anonymous_feedback">
+        <label for="anonymous-checkbox">Submit Feedback Anonymously</label>
+    </div>
+
+    <button type="submit" id="submit-feedback-btn">Submit Feedback</button>
+
+</form>
+
+</body>
+</html>

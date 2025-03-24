@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leave Request Submitted Successfully</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #7faad1; /* Match the background color of document.html */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        text-align: center;
+        background-color: #fff; /* White background */
+        padding: 20px;
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgb(14, 12, 96); /* Box shadow */
+        transition: box-shadow 0.3s ease; /* Smooth transition for box shadow */
+      }
+
+      h1 {
+        color: #7faad1; /* Blue text */
+      }
+
+      p {
+        color: #000; /* Black text */
+        margin-bottom: 20px; /* Add space below paragraph */
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: #0e0f10; /* Blue background */
+        color: #fff; /* White text */
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px; /* Rounded corners */
+        transition: background-color 0.3s ease; /* Smooth transition */
+      }
+
+      .btn:hover {
+        background-color: #7faad1; /* Darker blue on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Feedback Submitted Successfully!</h1>
+      <p>Your feedback has been successfully submitted.</p>
+      <a href="{% url 'analytics' %}" class="btn">Go Back to Analytics</a>
+    </div>
+  </body>
+</html>
